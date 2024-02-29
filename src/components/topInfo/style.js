@@ -10,6 +10,9 @@ export const Section = styled.div`
   &.second {
     background-color: white;
   }
+  &.third {
+    background-color: var(--deep-gray);
+  }
 `;
 
 export const InfoBox = styled.div`
@@ -30,6 +33,11 @@ export const Title = styled.h1`
     text-align: left;
     margin-left: 30px;
   }
+  &.third {
+    color: white;
+    text-align: right;
+    margin-right: 30px;
+  }
 `;
 
 export const SubTitle = styled.h3`
@@ -45,6 +53,11 @@ export const SubTitle = styled.h3`
     text-align: left;
     margin-left: 30px;
   }
+  &.third {
+    color: white;
+    text-align: right;
+    margin-right: 30px;
+  }
 `;
 
 export const SliceBar = styled.div`
@@ -58,6 +71,11 @@ export const SliceBar = styled.div`
   &.second {
     color: var(--deep-gray);
     margin-left: 30px;
+  }
+  &.third {
+    position: absolute;
+    right: 0;
+    margin-right: 30px;
   }
 `;
 
@@ -78,5 +96,8 @@ export const Button = styled.button`
   }
   &.second {
     left: 30px;
+  }
+  &.third {
+    right: 30px;
   }
 `;

@@ -1,5 +1,5 @@
-import TopInfo from "src/componemts/topInfo/TopInfo.js";
-import Layout from "./../componemts/layout/Layout.js";
+import TopInfo from "components/topInfo/index.js";
+import Layout from "components/layout/index.js";
 
 const Home = () => {
   return (

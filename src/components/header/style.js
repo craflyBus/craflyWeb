@@ -7,6 +7,11 @@ export const HeaderContainer = styled.header`
   width: 100%;
   height: 50px;
   background-color: var(--deep-gray);
+  z-index: 99;
+`;
+
+export const Logo = styled.div`
+  cursor: pointer;
 `;
 
 export const Contents = styled.div`

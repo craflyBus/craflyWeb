@@ -1,4 +1,4 @@
-import Header from "../header/Header";
+import Header from "../header/index";
 
 const Layout = (props) => {
   return (

@@ -32,6 +32,18 @@ const TopInfo = () => {
           <Button className="second">소재 확인하기</Button>
         </InfoBox>
       </Section>
+      <Section className="third">
+        <InfoBox>
+          <Title className="third">지속적인 커스터마이징</Title>
+          <SubTitle className="third">
+            구매 후에도 1년간 A/S가 가능하며
+            <br />
+            메크로, 기능등 추가적인 소프트웨어 업데이트를 요청할 수 있습니다.
+          </SubTitle>
+          <SliceBar className="third" />
+          <Button className="third">업그레이드 의뢰하기</Button>
+        </InfoBox>
+      </Section>
     </div>
   );
 };
