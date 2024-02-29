@@ -1,8 +1,8 @@
-import TopInfo from "components/topInfo/index.js";
+import TopInfo from "components/mainInfo/index.js";
 import Layout from "components/layout/index.js";
 
-const Home = () => {
+const HomePage = () => {
   return <Layout>{<TopInfo />}</Layout>;
 };
 
-export default Home;
+export default HomePage;

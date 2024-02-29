@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import {
   Section,
   InfoBox,
@@ -8,6 +9,8 @@ import {
 } from "./style.js";
 
 const TopInfo = () => {
+  const navigate = useNavigate();
+
   return (
     <div>
       <Section className="first">
@@ -17,7 +20,9 @@ const TopInfo = () => {
             현재 x개의 드론이 작업 대기중입니다
           </SubTitle>
           <SliceBar className="first" />
-          <Button className="first">커스텀 드론 견적받기</Button>
+          <Button className="first" onClick={() => navigate("/request/drone")}>
+            커스텀 드론 견적받기
+          </Button>
         </InfoBox>
       </Section>
       <Section className="second">
