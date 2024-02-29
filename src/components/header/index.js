@@ -1,12 +1,16 @@
 import { useNavigate } from "react-router-dom";
 import { HeaderContainer, Logo, Contents, Navigation } from "./style.js";
 
+import { ReactComponent as LogoImg } from "../../assets/images/logo.svg";
+
 const Header = () => {
   const navigate = useNavigate();
   return (
     <HeaderContainer>
       <Contents>
-        <Logo>logo</Logo>
+        <Logo onClick={() => navigate("/")}>
+          <LogoImg height={40} fill="#FFFFFF" />
+        </Logo>
         <Navigation>
           <ul>
             <li>사업 정보</li>

@@ -1,16 +1,20 @@
 import styled from "styled-components";
 
-export const HeaderContainer = styled.header`
-  position: fixed;
+export const FooterContainer = styled.header`
   left: 0;
   top: 0;
   width: 100%;
-  height: 50px;
+  height: 200px;
+  border-top: 1px solid gray;
   background-color: var(--deep-gray);
-  z-index: 99;
 `;
 
 export const Logo = styled.div`
+  cursor: pointer;
+  height: 40px;
+`;
+
+export const Info = styled.div`
   cursor: pointer;
   height: 40px;
 `;
@@ -30,13 +34,15 @@ export const Navigation = styled.nav`
   ul {
     display: flex;
     list-style: none;
+    margin-top: 50px;
 
-    font-weight: 700;
+    font-weight: 500;
+    font-size: 14px;
     color: white;
     cursor: pointer;
     li + li {
       &:not(:first-child) {
-        margin-left: 50px;
+        margin-left: 20px;
       }
     }
   }

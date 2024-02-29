@@ -1,11 +1,14 @@
 import Header from "../header/index";
+import Footer from "../footer/index";
+import { Global } from "./style";
 
 const Layout = (props) => {
   return (
-    <div>
+    <Global>
       <Header />
       <main>{props.children}</main>
-    </div>
+      <Footer />
+    </Global>
   );
 };
 

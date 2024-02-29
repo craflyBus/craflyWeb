@@ -2,6 +2,15 @@
   text-align: center;
 }
 
+body {
+  -ms-overflow-style: none;
+  scrollbar-width: none; /* Firefox */
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -36,3 +45,4 @@
     transform: rotate(360deg);
   }
 }
+
