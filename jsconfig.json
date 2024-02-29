@@ -1,0 +1,27 @@
+{
+    "compilerOptions": {
+        "lib": [
+            "dom",
+            "es2015",
+            "es2016",
+            "es6",
+            "es2017"
+        ],
+        "target": "es2017",
+        "module": "es6",
+        "allowSyntheticDefaultImports": true,
+        "baseUrl": "./",
+        "paths": {
+            "actions/*": ["src/actions/*"],
+            "public/*": ["public/*"],
+            "components/*": ["src/components/*"],
+            "containers/*": ["src/containers/*"],
+            "constants/*": ["src/constants/*"],
+            "config/*": ["config/*"],
+            "helpers/*": ["src/helpers/*"],
+            "stores/*": ["src/stores/*"],
+            "styles/*": ["src/styles/*"]
+        }
+    },
+    "exclude": ["node_modules", "**/node_modules/*"]
+}
