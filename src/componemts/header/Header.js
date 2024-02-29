@@ -8,9 +8,9 @@ const Header = () => {
         <Navigation>
           <ul>
             <li>사업 정보</li>
-            <li>드론 의뢰</li>
-            <li>업그레이드 의뢰</li>
+            <li>의뢰</li>
             <li>문의</li>
+            <li>로그인</li>
           </ul>
         </Navigation>
       </Contents>

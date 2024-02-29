@@ -5,8 +5,8 @@ export const HeaderContainer = styled.header`
   left: 0;
   top: 0;
   width: 100%;
-  height: 80px;
-  background-color: #dde0ea;
+  height: 50px;
+  background-color: var(--deep-gray);
 `;
 
 export const Contents = styled.div`
@@ -17,6 +17,7 @@ export const Contents = styled.div`
   margin: 0 auto;
   align-items: center;
   justify-content: space-between;
+  color: white;
 `;
 
 export const Navigation = styled.nav`
@@ -25,6 +26,7 @@ export const Navigation = styled.nav`
     list-style: none;
 
     font-weight: 700;
+    color: white;
     cursor: pointer;
     li + li {
       &:not(:first-child) {
