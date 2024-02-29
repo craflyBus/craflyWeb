@@ -6,6 +6,7 @@ import {
   SubTitle,
   Section,
   SectionTitle,
+  SectionSubTitle,
   PickBox,
   Pick,
   PickTitle,
@@ -62,6 +63,7 @@ const RequestDrone = () => {
 
         <Section>
           <SectionTitle>주 재질</SectionTitle>
+          <SectionSubTitle>Main Material</SectionSubTitle>
           <PickBox>
             {materials.map((option, index) => (
               <PickJump>
