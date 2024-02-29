@@ -7,28 +7,63 @@ export const Section = styled.div`
   &.first {
     background-color: var(--deep-gray);
   }
+  &.second {
+    background-color: white;
+  }
+`;
+
+export const InfoBox = styled.div`
+  top: 25%;
+  position: relative;
 `;
 
 export const Title = styled.h1`
   position: relative;
-  top: 30%;
   margin: 0;
   font-size: 50px;
   font-weight: 800;
-  color: white;
+  &.first {
+    color: white;
+  }
+  &.second {
+    color: var(--deep-gray);
+    text-align: left;
+    margin-left: 30px;
+  }
 `;
 
 export const SubTitle = styled.h3`
   position: relative;
-  top: 30%;
-  margin: 0;
+  margin-top: 0;
+  margin-bottom: 75px;
   font-size: 20px;
-  color: white;
+  &.first {
+    color: white;
+  }
+  &.second {
+    color: var(--deep-gray);
+    text-align: left;
+    margin-left: 30px;
+  }
+`;
+
+export const SliceBar = styled.div`
+  position: relative;
+  width: 100px;
+  height: 2px;
+  background-color: var(--pale-gray);
+  &.first {
+    margin: 0 auto;
+  }
+  &.second {
+    color: var(--deep-gray);
+    margin-left: 30px;
+  }
 `;
 
 export const Button = styled.button`
-  position: relative;
-  top: 40%;
+  position: absolute;
+  margin-top: 75px;
   width: 400px;
   height: 50px;
   border: 3px black;
@@ -37,4 +72,11 @@ export const Button = styled.button`
   font-weight: 700;
   color: var(--deep-gray);
   cursor: pointer;
+
+  &.first {
+    left: calc(50% - 200px);
+  }
+  &.second {
+    left: 30px;
+  }
 `;
