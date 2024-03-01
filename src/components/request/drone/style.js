@@ -25,12 +25,12 @@ export const SubTitle = styled.h2`
   font-size: 25px;
   font-weight: 500;
   margin: 0;
-  margin-bottom: 75px;
 `;
 
 export const Section = styled.div`
   width: 90vw;
-  margin: auto;
+  margin: 0;
+  margin-top: 40px;
 
   border: 2px solid var(--pale-gray);
   border-radius: 5px;

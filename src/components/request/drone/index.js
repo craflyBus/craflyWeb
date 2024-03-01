@@ -10,45 +10,10 @@ import {
 } from "./style.js";
 import PickContainer from "components/pickContainer/index.js";
 
-const RequestDrone = () => {
-  const materials = [
-    {
-      name: "PLA",
-      info: "저렴하고 접하기 쉬운 기본적인 필라멘트 소재입니다.",
-      printer: "FDM",
-    },
-    {
-      name: "ABS",
-      info: "PLA보다 내구성이 더욱 뛰어난 필라멘트 소재입니다.",
-      printer: "FDM",
-    },
-    {
-      name: "PETG",
-      info: "PLA와 ABS의 중간급 필라멘트 소재입니다.",
-      printer: "FDM",
-    },
-    {
-      name: "Standard Resin",
-      info: `가장 기본적인 레진 소재입니다.\n우수한 품질을 자랑합니다.`,
-      printer: "SLA",
-    },
-    {
-      name: "Tough Resin",
-      info: "가장 내구성이 뛰어난 레진 소재입니다.\n강도와 유연함이 균형잡혔으며,\n마모, 일그러짐, 충격등에 강합니다.",
-      printer: "SLA",
-    },
-    {
-      name: "Flexible Resin",
-      info: "실리콘, 우레탄, 고무와 같이 연성이 높은 레진 소재입니다.\n일그러짐, 충격등에 유연하게 대처합니다.",
-      printer: "SLA",
-    },
-    {
-      name: "Rigid Resin",
-      info: "매우 높은 강도를 가지고 있는 레진 소재입니다.\n열, 충격등에 의해 변형되지 않습니다.",
-      printer: "SLA",
-    },
-  ];
+import materials from "./pickList/materials.json";
+import sizes from "./pickList/sizes.json";
 
+const RequestDrone = () => {
   return (
     <RequestDroneContainer>
       <Title>
@@ -58,6 +23,11 @@ const RequestDrone = () => {
           <SectionTitle>주 재질</SectionTitle>
           <SectionSubTitle>Main Material</SectionSubTitle>
           {PickContainer(materials)}
+        </Section>
+        <Section>
+          <SectionTitle>기체 크기</SectionTitle>
+          <SectionSubTitle>Fuselage Size</SectionSubTitle>
+          {PickContainer(sizes)}
         </Section>
       </Title>
     </RequestDroneContainer>

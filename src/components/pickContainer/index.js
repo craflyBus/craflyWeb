@@ -9,12 +9,7 @@ export const PickContainer = (list) => {
     <PickBox>
       {list.map((option, index) => (
         <PickJump>
-          <Tooltip
-            width={"300px"}
-            height={"40px"}
-            info={option.info}
-            printer={option.printer}
-          >
+          <Tooltip width={"300px"} height={"40px"} option={option}>
             <Pick
               key={index}
               pick={pickMaterial === option.name ? "pick" : ""}

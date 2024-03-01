@@ -9,7 +9,7 @@ import {
   About,
 } from "./style";
 
-const Tooltip = (props) => {
+const Tooltip = ({ children, option, height, width }) => {
   const [hoverButton, setHoverButton] = useState(false);
   const [visionStatus, setVisionStatus] = useState(0);
   const timerRef = useRef(null);
@@ -43,20 +43,26 @@ const Tooltip = (props) => {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      {props.children}
-      <TooltipBox height={props.height} width={props.width} hover={hoverButton}>
+      {children}
+      <TooltipBox height={height} width={width} hover={hoverButton}>
         <TooltipText>
           <About>설명</About>
-          {props.info.split("\n").map((line, index) => (
+          {option.info.split("\n").map((line, index) => (
             <React.Fragment key={index}>
               {line}
               <br />
             </React.Fragment>
           ))}
-          {props.printer && (
+          {option.printer && (
             <div>
               <About>출력방식</About>
-              {props.printer}
+              {option.printer}
+            </div>
+          )}
+          {option.length && (
+            <div>
+              <About>길이</About>
+              {option.length}
             </div>
           )}
         </TooltipText>
