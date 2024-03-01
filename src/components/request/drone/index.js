@@ -8,10 +8,11 @@ import {
   SectionTitle,
   SectionSubTitle,
 } from "./style.js";
-import PickContainer from "components/pickContainer/index.js";
+import PickContainer from "components/pickContainer/button/index.js";
 
 import materials from "./pickList/materials.json";
 import sizes from "./pickList/sizes.json";
+import { PickSliderContainer } from "components/pickContainer/slider/index.js";
 
 const RequestDrone = () => {
   return (
@@ -27,7 +28,7 @@ const RequestDrone = () => {
         <Section>
           <SectionTitle>기체 크기</SectionTitle>
           <SectionSubTitle>Fuselage Size</SectionSubTitle>
-          {PickContainer(sizes)}
+          {PickSliderContainer("cm", sizes)}
         </Section>
       </Title>
     </RequestDroneContainer>

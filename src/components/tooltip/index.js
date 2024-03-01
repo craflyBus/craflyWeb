@@ -4,6 +4,7 @@ import {
   TooltipContainer,
   TooltipBox,
   TooltipText,
+  TooltipArrowPos,
   TooltipOutArrow,
   TooltipInArrow,
   About,
@@ -38,6 +39,7 @@ const Tooltip = ({ children, option, height, width }) => {
       setVisionStatus("off");
     }, 300);
   };
+
   return (
     <TooltipContainer
       onMouseEnter={handleMouseEnter}
@@ -46,6 +48,13 @@ const Tooltip = ({ children, option, height, width }) => {
       {children}
       <TooltipBox height={height} width={width} hover={hoverButton}>
         <TooltipText>
+          <About>이름</About>
+          {option.name.split("\n").map((line, index) => (
+            <React.Fragment key={index}>
+              {line}
+              <br />
+            </React.Fragment>
+          ))}
           <About>설명</About>
           {option.info.split("\n").map((line, index) => (
             <React.Fragment key={index}>
@@ -65,9 +74,17 @@ const Tooltip = ({ children, option, height, width }) => {
               {option.length}
             </div>
           )}
+          {option.speed && (
+            <div>
+              <About>속도</About>
+              {option.speed}
+            </div>
+          )}
         </TooltipText>
-        <TooltipOutArrow />
-        <TooltipInArrow />
+        <TooltipArrowPos>
+          <TooltipOutArrow />
+          <TooltipInArrow />
+        </TooltipArrowPos>
       </TooltipBox>
     </TooltipContainer>
   );

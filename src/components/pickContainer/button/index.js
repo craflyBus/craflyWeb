@@ -4,21 +4,21 @@ import { PickBox, Pick, PickTitle, PickJump } from "./style.js";
 import Tooltip from "components/tooltip/index.js";
 
 export const PickContainer = (list) => {
-  const [pickMaterial, setPickMaterial] = useState(false);
+  const [pickButton, setPickButton] = useState(false);
   return (
     <PickBox>
       {list.map((option, index) => (
         <PickJump>
-          <Tooltip width={"300px"} height={"40px"} option={option}>
+          <Tooltip width={"291px"} height={"40px"} option={option}>
             <Pick
               key={index}
-              pick={pickMaterial === option.name ? "pick" : ""}
+              pick={pickButton === option.name ? "pick" : ""}
               onClick={() => {
-                setPickMaterial(option.name);
+                setPickButton(option.name);
                 console.log(option.name);
               }}
             >
-              <PickTitle pick={pickMaterial === option.name ? "pick" : ""}>
+              <PickTitle pick={pickButton === option.name ? "pick" : ""}>
                 {option.name}
               </PickTitle>
             </Pick>

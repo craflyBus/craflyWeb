@@ -47,16 +47,20 @@ export const TooltipText = styled.h1`
   font-size: 12px;
   font-weight: 700;
 `;
-
+export const TooltipArrowPos = styled.div`
+  display: block;
+  position: absolute;
+  top: -9px;
+  width: 100%;
+`;
 export const TooltipInArrow = styled.div`
   border-color: white transparent;
   border-style: solid;
   border-width: 0 6px 8px 6.5px;
   content: "";
   display: block;
-  right: 75px;
   position: absolute;
-  top: -7px;
+  top: 3px;
   width: 0;
   z-index: 1;
 `;
@@ -66,8 +70,7 @@ export const TooltipOutArrow = styled.div`
   border-width: 0 6px 8px 6.5px;
   content: "";
   display: block;
-  right: 75px;
-  position: absolute;
+  right: 50px;
   top: -9px;
   width: 0;
   z-index: 0;
