@@ -12,6 +12,7 @@ import PickContainer from "components/pickContainer/button/index.js";
 
 import materials from "./pickList/materials.json";
 import sizes from "./pickList/sizes.json";
+import speed from "./pickList/speed.json";
 import { PickSliderContainer } from "components/pickContainer/slider/index.js";
 
 const RequestDrone = () => {
@@ -28,7 +29,25 @@ const RequestDrone = () => {
         <Section>
           <SectionTitle>기체 크기</SectionTitle>
           <SectionSubTitle>Fuselage Size</SectionSubTitle>
-          {PickSliderContainer("cm", sizes)}
+          {PickSliderContainer("cm", "150px", sizes, 30, 60, 30, 1, (size) => {
+            return parseInt(size < 41 ? 0 : size < 51 ? 1 : 2);
+          })}
+        </Section>
+        <Section>
+          <SectionTitle>예상 실속 속도</SectionTitle>
+          <SectionSubTitle>Stall Speed</SectionSubTitle>
+          {PickSliderContainer(
+            "m/s",
+            "220px",
+            speed,
+            50,
+            200,
+            50,
+            10,
+            (size) => {
+              return 0;
+            }
+          )}
         </Section>
       </Title>
     </RequestDroneContainer>

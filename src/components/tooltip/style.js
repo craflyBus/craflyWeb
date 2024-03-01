@@ -81,3 +81,7 @@ export const About = styled.h1`
   margin-bottom: 5px;
   color: green;
 `;
+
+export const Warning = styled.b`
+  color: red;
+`;

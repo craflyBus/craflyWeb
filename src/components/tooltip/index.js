@@ -8,6 +8,7 @@ import {
   TooltipOutArrow,
   TooltipInArrow,
   About,
+  Warning,
 } from "./style";
 
 const Tooltip = ({ children, option, height, width }) => {
@@ -40,6 +41,20 @@ const Tooltip = ({ children, option, height, width }) => {
     }, 300);
   };
 
+  const printText = (str) => {
+    return str.split("\n").map((line, index) => (
+      <React.Fragment key={index}>
+        {line.split("<!>").map((line, index) => {
+          if (index === 1) {
+            return <Warning key={index}>{line.split("</!>")[0]}</Warning>;
+          }
+          return line;
+        })}
+        <br />
+      </React.Fragment>
+    ));
+  };
+
   return (
     <TooltipContainer
       onMouseEnter={handleMouseEnter}
@@ -49,19 +64,9 @@ const Tooltip = ({ children, option, height, width }) => {
       <TooltipBox height={height} width={width} hover={hoverButton}>
         <TooltipText>
           <About>이름</About>
-          {option.name.split("\n").map((line, index) => (
-            <React.Fragment key={index}>
-              {line}
-              <br />
-            </React.Fragment>
-          ))}
+          {printText(option.name)}
           <About>설명</About>
-          {option.info.split("\n").map((line, index) => (
-            <React.Fragment key={index}>
-              {line}
-              <br />
-            </React.Fragment>
-          ))}
+          {printText(option.info)}
           {option.printer && (
             <div>
               <About>출력방식</About>

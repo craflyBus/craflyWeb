@@ -13,14 +13,25 @@ import Tooltip from "components/tooltip/index.js";
 
 import { ReactComponent as IconImg } from "../../../assets/images/Icon.svg";
 
-export const PickSliderContainer = (unit, list) => {
-  const [size, setSize] = useState(30);
+export const PickSliderContainer = (
+  unit,
+  tooltipWeight,
+  list,
+  min,
+  max,
+  defaultValue,
+  step,
+  callback
+) => {
+  const [size, setSize] = useState(defaultValue);
 
-  const min = 30,
-    max = 60;
-
-  const getIndex = (size) => {
-    return parseInt(size < 41 ? 0 : size < 51 ? 1 : 2);
+  const generateOptions = (min, max, step) => {
+    const options = [];
+    for (let i = min; i <= max; i += step * 5) {
+      console.log(min + " " + max + " " + i);
+      options.push(<Option>{i}</Option>);
+    }
+    return options;
   };
 
   return (
@@ -28,15 +39,15 @@ export const PickSliderContainer = (unit, list) => {
       <SizeTextBox>
         <SizeText className="value">{size}</SizeText>
         <SizeText>{unit} [</SizeText>
-        <SizeText>{list[getIndex(size)].name}</SizeText>
+        <SizeText>{list[callback(size)].name}</SizeText>
         <SizeText>]</SizeText>
         <IconJump />
 
         <IconBox>
           <Tooltip
-            width={"100px"}
+            width={tooltipWeight}
             height={"40px"}
-            option={list[getIndex(size)]}
+            option={list[callback(size)]}
           >
             <IconImg fill="#404040" width={"30px"} height={"30px"} />
           </Tooltip>
@@ -49,18 +60,14 @@ export const PickSliderContainer = (unit, list) => {
           type="range"
           min={min}
           max={max}
+          step={step}
           list="tickmarks"
-          defaultValue={size}
+          defaultValue={defaultValue}
           onChange={(e) => {
             setSize(e.target.value);
           }}
         />
-        <datalist id="tickmarks">
-          <Option value="30">30</Option>
-          <Option value="40">40</Option>
-          <Option value="50">50</Option>
-          <Option value="60">60</Option>
-        </datalist>
+        <datalist id="tickmarks">{generateOptions(min, max, step)}</datalist>
       </SliderBox>
     </div>
   );
