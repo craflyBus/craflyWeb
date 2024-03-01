@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import {
   RequestDroneContainer,
   Title,
@@ -7,12 +7,8 @@ import {
   Section,
   SectionTitle,
   SectionSubTitle,
-  PickBox,
-  Pick,
-  PickTitle,
-  PickJump,
 } from "./style.js";
-import Tooltip from "components/tooltip/index.js";
+import PickContainer from "components/pickContainer/index.js";
 
 const RequestDrone = () => {
   const materials = [
@@ -53,44 +49,15 @@ const RequestDrone = () => {
     },
   ];
 
-  const [pickMaterial, setPickMaterial] = useState(false);
-
   return (
     <RequestDroneContainer>
       <Title>
         <MainTitle>드론 제작 의뢰서</MainTitle>
         <SubTitle>Drone Production Request Form</SubTitle>
-
         <Section>
           <SectionTitle>주 재질</SectionTitle>
           <SectionSubTitle>Main Material</SectionSubTitle>
-          <PickBox>
-            {materials.map((option, index) => (
-              <PickJump>
-                <Tooltip
-                  width={"300px"}
-                  height={"40px"}
-                  info={option.info}
-                  printer={option.printer}
-                >
-                  <Pick
-                    key={index}
-                    pick={pickMaterial === option.name ? "pick" : ""}
-                    onClick={() => {
-                      setPickMaterial(option.name);
-                      console.log(option.name);
-                    }}
-                  >
-                    <PickTitle
-                      pick={pickMaterial === option.name ? "pick" : ""}
-                    >
-                      {option.name}
-                    </PickTitle>
-                  </Pick>
-                </Tooltip>
-              </PickJump>
-            ))}
-          </PickBox>
+          {PickContainer(materials)}
         </Section>
       </Title>
     </RequestDroneContainer>
