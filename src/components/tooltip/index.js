@@ -61,48 +61,52 @@ const Tooltip = ({ children, option, height, width }) => {
       onMouseLeave={handleMouseLeave}
     >
       {children}
-      <TooltipBox height={height} width={width} hover={hoverButton}>
-        <TooltipText>
-          <About>이름</About>
-          {printText(option.name)}
-          <About>설명</About>
-          {printText(option.info)}
-          {option.printer && (
-            <div>
-              <About>출력방식</About>
-              {option.printer}
-            </div>
-          )}
-          {option.length && (
-            <div>
-              <About>길이</About>
-              {option.length}
-            </div>
-          )}
-          {option.speed && (
-            <div>
-              <About>속도</About>
-              {option.speed}
-            </div>
-          )}
-          {option.mha && (
-            <div>
-              <About>용량</About>
-              {option.mha}
-            </div>
-          )}
-          {option.size && (
-            <div>
-              <About>사이즈</About>
-              {option.size}
-            </div>
-          )}
-        </TooltipText>
-        <TooltipArrowPos>
-          <TooltipOutArrow />
-          <TooltipInArrow />
-        </TooltipArrowPos>
-      </TooltipBox>
+      {option.info ? (
+        <TooltipBox height={height} width={width} hover={hoverButton}>
+          <TooltipText>
+            <About>이름</About>
+            {printText(option.name)}
+            <About>설명</About>
+            {printText(option.info)}
+            {option.printer && (
+              <div>
+                <About>출력방식</About>
+                {option.printer}
+              </div>
+            )}
+            {option.length && (
+              <div>
+                <About>길이</About>
+                {option.length}
+              </div>
+            )}
+            {option.speed && (
+              <div>
+                <About>속도</About>
+                {option.speed}
+              </div>
+            )}
+            {option.mha && (
+              <div>
+                <About>용량</About>
+                {option.mha}
+              </div>
+            )}
+            {option.size && (
+              <div>
+                <About>사이즈</About>
+                {option.size}
+              </div>
+            )}
+          </TooltipText>
+          <TooltipArrowPos>
+            <TooltipOutArrow />
+            <TooltipInArrow />
+          </TooltipArrowPos>
+        </TooltipBox>
+      ) : (
+        <></>
+      )}
     </TooltipContainer>
   );
 };
