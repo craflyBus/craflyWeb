@@ -39,8 +39,12 @@ export const PickContainer = (list) => {
                     key={index}
                     pick={pickButton === option.name ? "pick" : ""}
                     onClick={() => {
-                      setPickButton(option.name);
-                      console.log(option.name);
+                      if (pickButton !== option.name) {
+                        setPickButton(option.name);
+                        console.log(option.name);
+                      } else {
+                        setPickButton(false);
+                      }
                     }}
                   >
                     <PickTitle pick={pickButton === option.name ? "pick" : ""}>
