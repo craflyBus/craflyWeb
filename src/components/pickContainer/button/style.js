@@ -1,9 +1,32 @@
 import styled from "styled-components";
 
+export const PickBlock = styled.div`
+  display: inline-block;
+`;
+
 export const PickBox = styled.div`
   display: flex;
   flex-wrap: wrap;
   padding: 10px;
+`;
+
+export const IconBox = styled.div`
+  display: inline-block;
+`;
+
+export const SizeText = styled.a`
+  color: var(--deep-gray);
+  margin: 0;
+  font-size: 30px;
+  text-align: center;
+  &.value {
+    color: var(--deep-blue);
+  }
+`;
+
+export const IconJump = styled.div`
+  display: inline-block;
+  width: 30px;
 `;
 
 export const Pick = styled.div`

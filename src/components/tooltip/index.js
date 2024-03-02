@@ -85,6 +85,18 @@ const Tooltip = ({ children, option, height, width }) => {
               {option.speed}
             </div>
           )}
+          {option.mha && (
+            <div>
+              <About>용량</About>
+              {option.mha}
+            </div>
+          )}
+          {option.size && (
+            <div>
+              <About>사이즈</About>
+              {option.size}
+            </div>
+          )}
         </TooltipText>
         <TooltipArrowPos>
           <TooltipOutArrow />

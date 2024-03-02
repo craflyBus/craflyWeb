@@ -14,6 +14,7 @@ import materials from "./pickList/materials.json";
 import sizes from "./pickList/sizes.json";
 import speed from "./pickList/speed.json";
 import powerSources from "./pickList/powerSources.json";
+import battery from "./pickList/battery.json";
 import { PickSliderContainer } from "components/pickContainer/slider/index.js";
 
 const RequestDrone = () => {
@@ -54,6 +55,11 @@ const RequestDrone = () => {
               return 0;
             }
           )}
+        </Section>
+        <Section>
+          <SectionTitle>배터리</SectionTitle>
+          <SectionSubTitle>battery</SectionSubTitle>
+          {PickContainer(battery)}
         </Section>
       </Title>
     </RequestDroneContainer>
