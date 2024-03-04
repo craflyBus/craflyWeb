@@ -17,6 +17,7 @@ import powerSources from "./pickList/powerSources.json";
 import battery from "./pickList/battery.json";
 import batteryUnit from "./pickList/batteryUnit.json";
 import { PickSliderContainer } from "components/pickContainer/slider/index.js";
+import { ImageContainer } from "components/pickContainer/image/index.js";
 
 const RequestDrone = () => {
   return (
@@ -66,6 +67,11 @@ const RequestDrone = () => {
           <SectionTitle>배터리 커넥터</SectionTitle>
           <SectionSubTitle>battery Connector</SectionSubTitle>
           {PickContainer(batteryUnit)}
+        </Section>
+        <Section>
+          <SectionTitle>예시 사진</SectionTitle>
+          <SectionSubTitle>Example Picture</SectionSubTitle>
+          {ImageContainer()}
         </Section>
       </Title>
     </RequestDroneContainer>
