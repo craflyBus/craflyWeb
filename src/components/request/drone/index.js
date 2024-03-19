@@ -19,6 +19,7 @@ import batterys from "./pickList/batterys.json";
 import batteryUnits from "./pickList/batteryUnits.json";
 import { PickSliderContainer } from "components/pickContainer/slider/index.js";
 import { ImageContainer } from "components/pickContainer/image/index.js";
+import FunctionContainer from "components/pickContainer/input/index.js";
 
 const RequestDrone = () => {
   const [type, setType] = useState(null);
@@ -108,6 +109,11 @@ const RequestDrone = () => {
           <SectionTitle>예시 사진</SectionTitle>
           <SectionSubTitle>Example Picture</SectionSubTitle>
           {ImageContainer(examplePicture, setExamplePicture)}
+        </Section>
+        <Section>
+          <SectionTitle>기능 설정</SectionTitle>
+          <SectionSubTitle>Set Function</SectionSubTitle>
+          <FunctionContainer></FunctionContainer>
         </Section>
       </Title>
     </RequestDroneContainer>
