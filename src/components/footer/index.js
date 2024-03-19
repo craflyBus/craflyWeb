@@ -1,10 +1,8 @@
-import { useNavigate } from "react-router-dom";
 import { FooterContainer, Contents, Info, Navigation, Logo } from "./style.js";
 
 import { ReactComponent as LogoImg } from "../../assets/images/logo.svg";
 
 const Footer = () => {
-  const navigate = useNavigate();
   return (
     <FooterContainer>
       <Contents>
