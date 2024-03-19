@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Preview, File, PreviewMsg, PreviewDesc } from "./style.js";
+import { Upload, Preview, File, UploadDesc, UploadMsg } from "./style.js";
 
 import { ReactComponent as IconImg } from "../../../assets/images/Icon.svg";
 import { useToast } from "components/toast/index.js";
@@ -11,6 +11,10 @@ export const ImageContainer = (list) => {
   const handleDragEnd = () => setActive(false);
 
   const showToast = useToast();
+
+  const handleImageClick = (index) => {
+    setImgs((prevImgs) => prevImgs.filter((_, i) => i !== index));
+  };
 
   const handleDragOver = (event) => {
     event.preventDefault();
@@ -26,9 +30,9 @@ export const ImageContainer = (list) => {
         showToast("업로드한 파일이 너무 큽니다", "attn");
       } else {
         console.log(file.name);
-        showToast("업로드됨 : " + file.name, "info");
         setImgs((imgs) => [...imgs, file]);
       }
+      showToast("업로드 완료");
       console.log("d");
     }
 
@@ -38,14 +42,14 @@ export const ImageContainer = (list) => {
   return (
     <div>
       {imgs.map((image, index) => (
-        <img
+        <Preview
           key={index}
           src={URL.createObjectURL(image)}
           alt={`이미지-${index}`}
-          style={{ width: "100px", height: "auto", marginRight: "10px" }}
+          onClick={() => handleImageClick(index)}
         />
       ))}
-      <Preview
+      <Upload
         className={isActive ? " active" : ""}
         onDragEnter={handleDragStart}
         onDragOver={handleDragOver}
@@ -54,9 +58,9 @@ export const ImageContainer = (list) => {
       >
         <File type="file" />
         <IconImg fill="var(--deep-gray)" />
-        <PreviewMsg>클릭 혹은 파일을 이곳에 드롭하세요.</PreviewMsg>
-        <PreviewDesc>파일당 최대 3MB</PreviewDesc>
-      </Preview>
+        <UploadMsg>클릭 혹은 파일을 이곳에 드롭하세요.</UploadMsg>
+        <UploadDesc>파일당 최대 3MB</UploadDesc>
+      </Upload>
     </div>
   );
 };

@@ -12,7 +12,17 @@ export const File = styled.input`
   }
 `;
 
-export const Preview = styled.label`
+export const Preview = styled.img`
+  width: 150px;
+  height: auto;
+  margin-right: 10px;
+
+  &:hover {
+    opacity: 0.5;
+  }
+`;
+
+export const Upload = styled.label`
   width: auto;
   height: 300px;
   margin: auto;
@@ -34,13 +44,13 @@ export const Preview = styled.label`
   }
 `;
 
-export const PreviewMsg = styled.p`
+export const UploadMsg = styled.p`
   font-weight: 500;
   font-size: 18px;
   margin: 20px 0 10px;
 `;
 
-export const PreviewDesc = styled.p`
+export const UploadDesc = styled.p`
   margin: 0;
   font-size: 14px;
 `;
