@@ -1,4 +1,3 @@
-import { useState } from "react";
 import {
   PickBlock,
   PickBox,
@@ -13,8 +12,7 @@ import {
 import { ReactComponent as IconImg } from "../../../assets/images/Icon.svg";
 import Tooltip from "components/tooltip/index.js";
 
-export const PickContainer = (list) => {
-  const [pickButton, setPickButton] = useState(false);
+export const PickContainer = (list, value, handle) => {
   return (
     <div>
       {list[0].type === "%about" && (
@@ -37,17 +35,17 @@ export const PickContainer = (list) => {
                 <Tooltip width={"291px"} height={"40px"} option={option}>
                   <Pick
                     key={index}
-                    pick={pickButton === option.name ? "pick" : ""}
+                    pick={value === option.key ? "pick" : ""}
                     onClick={() => {
-                      if (pickButton !== option.name) {
-                        setPickButton(option.name);
-                        console.log(option.name);
+                      if (value !== option.key) {
+                        handle(option.key);
+                        console.log(option.key);
                       } else {
-                        setPickButton(false);
+                        handle(false);
                       }
                     }}
                   >
-                    <PickTitle pick={pickButton === option.name ? "pick" : ""}>
+                    <PickTitle pick={value === option.key ? "pick" : ""}>
                       {option.name}
                     </PickTitle>
                   </Pick>

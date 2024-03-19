@@ -2,39 +2,51 @@
   {
     "type": "%about",
     "name": "배터리 커넥터",
+    "key":"",
     "info": "이미 충전기를 보유하신 경우 그에 맞는 배터리 커넥터를 선택해 주세요.\n기타 용품이 없는 경우 아무거나 선택하셔도 무방합니다."
   },
   {
+    "key":"MOLEX",
     "name": "MOLEX"
   },
   {
+    "key":"JST",
     "name": "JST"
   },
   {
+    "key":"HC",
     "name": "HC"
   },
   {
+    "key":"1.25",
     "name": "1.25"
   },
   {
+    "key":"1.85",
     "name": "1.85"
   },
   {
+    "key":"XT30",
     "name": "XT30"
   },
   {
+    "key":"XT60",
     "name": "XT60"
   },
   {
+    "key":"XT90",
     "name": "XT90"
   },
   {
+    "key":"XT150",
     "name": "XT150"
   },
   {
+    "key":"XH",
     "name": "XH"
   },
   {
+    "key":"SM",
     "name": "SM"
   }
 ]

@@ -21,10 +21,10 @@ export const PickSliderContainer = (
   max,
   defaultValue,
   step,
-  callback
+  callback,
+  value,
+  handle
 ) => {
-  const [size, setSize] = useState(defaultValue);
-
   const generateOptions = (min, max, step) => {
     const options = [];
     for (let i = min; i <= max; i += step * 5) {
@@ -36,9 +36,9 @@ export const PickSliderContainer = (
   return (
     <div>
       <SizeTextBox>
-        <SizeText className="value">{size}</SizeText>
+        <SizeText className="value">{value}</SizeText>
         <SizeText>{unit} [</SizeText>
-        <SizeText>{list[callback(size)].name}</SizeText>
+        <SizeText>{list[callback(value)].name}</SizeText>
         <SizeText>]</SizeText>
         <IconJump />
 
@@ -46,7 +46,7 @@ export const PickSliderContainer = (
           <Tooltip
             width={tooltipWeight}
             height={"40px"}
-            option={list[callback(size)]}
+            option={list[callback(value)]}
           >
             <IconImg fill="#404040" width={"30px"} height={"30px"} />
           </Tooltip>
@@ -63,7 +63,7 @@ export const PickSliderContainer = (
           list="tickmarks"
           defaultValue={defaultValue}
           onChange={(e) => {
-            setSize(e.target.value);
+            handle(e.target.value);
           }}
         />
         <datalist id="tickmarks">{generateOptions(min, max, step)}</datalist>
