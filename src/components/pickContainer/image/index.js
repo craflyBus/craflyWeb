@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Preview, File, PreviewMsg, PreviewDesc } from "./style.js";
 
 import { ReactComponent as IconImg } from "../../../assets/images/Icon.svg";
-import Tooltip from "components/tooltip/index.js";
+import { useToast } from "components/toast/index.js";
 
 // todo DnD
 
@@ -11,17 +11,23 @@ export const ImageContainer = (list) => {
   const handleDragStart = () => setActive(true);
   const handleDragEnd = () => setActive(false);
 
+  const showToast = useToast();
+
   const handleDragOver = (event) => {
     event.preventDefault(); // 필수 1
   };
 
-  console.log()
+  console.log();
 
   const handleDrop = (event) => {
     event.preventDefault();
 
     const file = event.dataTransfer.files[0];
     // readImage(file);
+    if (file.size > 3 * 1024 * 1024) {
+      showToast("파일이 너무 큽니다", "attn");
+    }
+
     setActive(false);
   };
 
