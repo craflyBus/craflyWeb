@@ -18,7 +18,6 @@ const Tooltip = ({ children, option, height, width }) => {
 
   const handleMouseEnter = () => {
     clearTimeout(timerRef.current);
-    console.log("hover!");
     if (visionStatus === "down") {
       setHoverButton(true);
       setVisionStatus("on");
@@ -32,7 +31,6 @@ const Tooltip = ({ children, option, height, width }) => {
   };
 
   const handleMouseLeave = () => {
-    console.log("leave!");
     setVisionStatus("down");
     setHoverButton(false);
     clearTimeout(timerRef.current);

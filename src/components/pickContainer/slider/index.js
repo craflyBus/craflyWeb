@@ -28,7 +28,6 @@ export const PickSliderContainer = (
   const generateOptions = (min, max, step) => {
     const options = [];
     for (let i = min; i <= max; i += step * 5) {
-      console.log(min + " " + max + " " + i);
       options.push(<Option>{i}</Option>);
     }
     return options;
