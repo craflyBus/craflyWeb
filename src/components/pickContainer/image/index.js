@@ -25,8 +25,9 @@ export const ImageContainer = (list) => {
       if (file.size > 3 * 1024 * 1024) {
         showToast("업로드한 파일이 너무 큽니다", "attn");
       } else {
+        console.log(file.name);
         showToast("업로드됨 : " + file.name, "info");
-        setImgs([...imgs, file]);
+        setImgs((imgs) => [...imgs, file]);
       }
       console.log("d");
     }
