@@ -26,13 +26,14 @@ export const ImageContainer = (list) => {
     const files = event.dataTransfer.files;
     for (let i = 0; i < files.length; i++) {
       const file = files[i];
+      console.log(file.size + " " + 3 * 1024 * 1024);
       if (file.size > 3 * 1024 * 1024) {
         showToast("업로드한 파일이 너무 큽니다", "attn");
       } else {
+        showToast("업로드 완료", "info");
         console.log(file.name);
         setImgs((imgs) => [...imgs, file]);
       }
-      showToast("업로드 완료");
       console.log("d");
     }
 

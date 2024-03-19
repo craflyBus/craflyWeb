@@ -21,12 +21,11 @@ export const ToastProvider = ({ children }) => {
     <ToastContext.Provider value={showToast}>
       {children}
       <ToastContainer>
-        {toast.length &&
-          toast.map(({ message, type, idx, index }) => (
-            <Toast className={type} position={index * 60}>
-              {message}
-            </Toast>
-          ))}
+        {toast.map(({ message, type, idx, index }) => (
+          <Toast className={type} position={index * 60}>
+            {message}
+          </Toast>
+        ))}
       </ToastContainer>
     </ToastContext.Provider>
   );
