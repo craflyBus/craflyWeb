@@ -11,3 +11,22 @@ export const AddFunction = styled.div`
   width: 90%;
   height: 50px;
 `;
+export const Field = styled.form`
+  padding: "2%";
+`;
+export const TitleTextBox = styled.input`
+  margin-top: 10;
+  margin-right: 10;
+`;
+export const ContentTextBox = styled.input`
+  margin-top: 10;
+  margin-right: 10;
+`;
+export const RemoveBox = styled.button`
+  margin-top: 10;
+  margin-right: 10;
+`;
+export const AddBox = styled.button`
+  margin-top: 10;
+  margin-right: 10;
+`;

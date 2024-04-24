@@ -1,4 +1,11 @@
 import React, { useEffect, useState } from "react";
+import {
+  RemoveBox,
+  AddBox,
+  Field,
+  ContentTextBox,
+  TitleTextBox,
+} from "./style";
 
 export const DynamicFormComponent = () => {
   const [formFields, setFormFields] = useState([{ name: "", value: "" }]);
@@ -9,10 +16,6 @@ export const DynamicFormComponent = () => {
   };
 
   const handleRemoveFields = (index) => {
-    if (formFields.length === 1) {
-      alert("At least one form must remain");
-      return;
-    }
     const values = [...formFields];
     values.splice(index, 1);
     setFormFields(values);
@@ -39,10 +42,10 @@ export const DynamicFormComponent = () => {
   }, [formFields]);
 
   return (
-    <form onSubmit={handleSubmit} style={{ padding: "2%" }}>
+    <form onSubmit={handleSubmit} style={{}}>
       {formFields.map((field, index) => (
-        <div key={index} style={{ marginBottom: 5 }}>
-          <input
+        <Field key={index}>
+          <TitleTextBox
             type="text"
             placeholder="Field name"
             name="name"
@@ -51,7 +54,7 @@ export const DynamicFormComponent = () => {
             style={{ marginRight: 10 }}
           />
 
-          <input
+          <ContentTextBox
             type="text"
             placeholder="Field value"
             name="value"
@@ -60,19 +63,15 @@ export const DynamicFormComponent = () => {
             style={{ marginRight: 10 }}
           />
 
-          <button type="button" onClick={() => handleRemoveFields(index)}>
+          <RemoveBox type="button" onClick={() => handleRemoveFields(index)}>
             Remove
-          </button>
-        </div>
+          </RemoveBox>
+        </Field>
       ))}
 
-      <button
-        type="button"
-        onClick={() => handleAddFields()}
-        style={{ marginTop: 10, marginRight: 10 }}
-      >
+      <AddBox type="button" onClick={() => handleAddFields()}>
         Add Field
-      </button>
+      </AddBox>
     </form>
   );
 };
