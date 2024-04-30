@@ -31,6 +31,11 @@ const Login = ({ isOpen, close }) => {
     setPw(e.target.value);
   };
 
+  const bubbleCutHandler = (e) => {
+    // 모달 내부를 클릭할 때는 모달을 닫지 않도록 설정
+    e.stopPropagation();
+  };
+
   const loginClickHandler = () => {
     fetch(`http://${process.env.REACT_APP_API_KEY}/login`, {
       method: "POST",
@@ -49,7 +54,7 @@ const Login = ({ isOpen, close }) => {
   return isOpen ? (
     <Modal>
       <div onClick={close}>
-        <LoginModal>
+        <LoginModal onClick={(e) => bubbleCutHandler(e)}>
           <Close onClick={close}>&times;</Close>
           <ModalContents>
             <IconImg className="icon-img" />
