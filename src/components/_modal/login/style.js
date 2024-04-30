@@ -33,6 +33,18 @@ export const ModalContents = styled.div`
   display: flex;
   justify-content: center;
   flex-direction: column;
+
+  .icon-img {
+    width: 150px;
+    margin: 10px auto 10px auto;
+    fill: var(--deep-gray);
+  }
+  .icon-text {
+    font-size: 30px;
+    font-weight: 700;
+    margin: 0 auto 30px auto;
+    fill: var(--deep-gray);
+  }
 `;
 
 export const SigninIcon = styled.img`

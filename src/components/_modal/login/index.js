@@ -51,8 +51,9 @@ const Login = ({ isOpen, close }) => {
       <div onClick={close}>
         <LoginModal>
           <Close onClick={close}>&times;</Close>
-          <ModalContents onClick={isOpen}>
-            <IconImg />
+          <ModalContents>
+            <IconImg className="icon-img" />
+            <div className="icon-text">Crafly Login</div>
             <LoginId
               type="text"
               placeholder="아이디"
@@ -84,9 +85,7 @@ const Login = ({ isOpen, close }) => {
         </LoginModal>
       </div>
     </Modal>
-  ) : (
-    <div>dsad</div>
-  );
+  ) : null;
 };
 
 export default Login;
