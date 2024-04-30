@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import {
   LoginModal,
   Modal,
@@ -20,6 +20,8 @@ import { ReactComponent as KakaoIconImg } from "../../../assets/images/Kakao.svg
 import { useState } from "react";
 
 const Login = ({ isOpen, close }) => {
+  const navigate = useNavigate();
+
   const [id, setId] = useState("");
   const [pw, setPw] = useState("");
 
@@ -32,7 +34,6 @@ const Login = ({ isOpen, close }) => {
   };
 
   const bubbleCutHandler = (e) => {
-    // 모달 내부를 클릭할 때는 모달을 닫지 않도록 설정
     e.stopPropagation();
   };
 
@@ -78,10 +79,21 @@ const Login = ({ isOpen, close }) => {
               value="로그인"
             />
             <SocialBox>
-              <Kakao>
-                <KakaoIconImg width={25} height={25} />
-                <KakaoText>카카오 계정으로 로그인</KakaoText>
-              </Kakao>
+              <Link
+                to={
+                  "https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=" +
+                  process.env.REACT_APP_KAKAO_CLIENT_ID +
+                  "&redirect_uri=" +
+                  process.env.REACT_APP_API_KEY +
+                  "/login/oauth2/code/kakao"
+                }
+                style={{ textDecoration: "none", color: "black" }}
+              >
+                <Kakao>
+                  <KakaoIconImg width={25} height={25} />
+                  <KakaoText>카카오 계정으로 로그인</KakaoText>
+                </Kakao>
+              </Link>
             </SocialBox>
             <LoginEnd>
               <LoginLine>
