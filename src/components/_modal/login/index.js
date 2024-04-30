@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import {
   LoginModal,
   Modal,
@@ -20,8 +20,6 @@ import { ReactComponent as KakaoIconImg } from "../../../assets/images/Kakao.svg
 import { useState } from "react";
 
 const Login = ({ isOpen, close }) => {
-  const navigate = useNavigate();
-
   const [id, setId] = useState("");
   const [pw, setPw] = useState("");
 
@@ -85,7 +83,7 @@ const Login = ({ isOpen, close }) => {
                   process.env.REACT_APP_KAKAO_CLIENT_ID +
                   "&redirect_uri=" +
                   process.env.REACT_APP_API_KEY +
-                  "/login/oauth2/code/kakao"
+                  "/v2/user/login/kakao"
                 }
                 style={{ textDecoration: "none", color: "black" }}
               >
