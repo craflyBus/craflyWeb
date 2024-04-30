@@ -84,7 +84,9 @@ const Login = ({ isOpen, close }) => {
               </Kakao>
             </SocialBox>
             <LoginEnd>
-              <LoginLine>회원이 아니신가요? 회원가입</LoginLine>
+              <LoginLine>
+                회원이 아니신가요? <Link to="/signup">회원가입</Link>
+              </LoginLine>
             </LoginEnd>
           </ModalContents>
         </LoginModal>
