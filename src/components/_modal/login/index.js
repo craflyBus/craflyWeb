@@ -55,7 +55,7 @@ const Login = ({ isOpen, close }) => {
     <Modal>
       <div onClick={close}>
         <LoginModal onClick={(e) => bubbleCutHandler(e)}>
-          <Close onClick={close}>&times;</Close>
+          <Close onClick={close}>×</Close>
           <ModalContents>
             <IconImg className="icon-img" />
             <div className="icon-text">Crafly Login</div>

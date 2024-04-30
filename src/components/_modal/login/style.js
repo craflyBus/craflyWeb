@@ -22,6 +22,7 @@ export const LoginModal = styled.div`
 export const Close = styled.span`
   float: right;
   font-size: 25px;
+  cursor: pointer;
 `;
 
 export const ModalContents = styled.div`
@@ -122,6 +123,7 @@ export const Kakao = styled.div`
   box-sizing: border-box;
   margin-bottom: 10px;
   border-radius: 3px;
+  cursor: pointer;
 `;
 
 export const KakaoText = styled.div`
