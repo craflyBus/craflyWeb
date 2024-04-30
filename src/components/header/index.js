@@ -2,9 +2,22 @@ import { useNavigate } from "react-router-dom";
 import { HeaderContainer, Logo, Contents, Navigation } from "./style.js";
 
 import { ReactComponent as LogoImg } from "../../assets/images/logo.svg";
+import { useState } from "react";
+import Login from "components/_modal/login/index.js";
 
 const Header = () => {
   const navigate = useNavigate();
+
+  const [loginOpen, setLoginOpen] = useState(false);
+
+  const openLoginModal = () => {
+    setLoginOpen(true);
+  };
+
+  const closeLoginModal = () => {
+    setLoginOpen(false);
+  };
+
   return (
     <HeaderContainer>
       <Contents>
@@ -16,10 +29,11 @@ const Header = () => {
             <li>사업 정보</li>
             <li>의뢰</li>
             <li>문의</li>
-            <li onClick={() => navigate("/login")}>로그인</li>
+            <li onClick={openLoginModal}>로그인</li>
           </ul>
         </Navigation>
       </Contents>
+      <Login isOpen={loginOpen} close={closeLoginModal} />
     </HeaderContainer>
   );
 };
