@@ -18,8 +18,11 @@ import {
 import { ReactComponent as IconImg } from "../../../assets/images/Icon.svg";
 import { ReactComponent as KakaoIconImg } from "../../../assets/images/Kakao.svg";
 import { useState } from "react";
+import LoginAPI from "src/api/Login.api.js";
 
 const Login = ({ isOpen, close }) => {
+  const loginAPI = LoginAPI();
+
   const [id, setId] = useState("");
   const [pw, setPw] = useState("");
 
@@ -36,18 +39,14 @@ const Login = ({ isOpen, close }) => {
   };
 
   const loginClickHandler = () => {
-    fetch(`http://${process.env.REACT_APP_API_KEY}/login`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        id,
-        pw,
-      }),
-    })
-      .then((res) => res.json())
-      .then((res) => console.log(res));
+    loginAPI
+      .authReq(id, pw)
+      .then((data) => {
+        console.log(data);
+      })
+      .catch((e) => {
+        console.log(e);
+      });
   };
 
   return isOpen ? (
@@ -82,8 +81,8 @@ const Login = ({ isOpen, close }) => {
                   "https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=" +
                   process.env.REACT_APP_KAKAO_CLIENT_ID +
                   "&redirect_uri=" +
-                  process.env.REACT_APP_API_KEY +
-                  "/v2/user/login/kakao"
+                  process.env.REACT_APP_API_URL +
+                  "/v1/user/login/kakao"
                 }
                 style={{ textDecoration: "none", color: "black" }}
               >
