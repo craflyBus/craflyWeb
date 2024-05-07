@@ -1,5 +1,5 @@
-import TopInfo from "components/mainInfo/index.js";
-import Layout from "components/layout/index.js";
+import TopInfo from "@components/mainInfo/index.js";
+import Layout from "@components/layout/index.js";
 import { useEffect } from "react";
 
 const HomePage = () => {

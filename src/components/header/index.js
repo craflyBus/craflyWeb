@@ -1,9 +1,9 @@
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 import { HeaderContainer, Logo, Contents, Navigation } from "./style.js";
 
-import { ReactComponent as LogoImg } from "../../assets/images/logo.svg";
-import { useState } from "react";
-import Login from "components/_modal/login/index.js";
+import { ReactComponent as LogoImg } from "@assets/images/logo.svg";
+import Login from "@components/_modal/login/index.js";
 
 const Header = () => {
   const navigate = useNavigate();

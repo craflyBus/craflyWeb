@@ -15,38 +15,15 @@ import {
   LoginEnd,
   LoginLine,
 } from "./style.js";
-import { ReactComponent as IconImg } from "../../../assets/images/Icon.svg";
-import { ReactComponent as KakaoIconImg } from "../../../assets/images/Kakao.svg";
-import { useState } from "react";
-import LoginAPI from "src/api/Login.api.js";
+import { ReactComponent as IconImg } from "@assets/images/Icon.svg";
+import { ReactComponent as KakaoIconImg } from "@assets/images/Kakao.svg";
+import useLogin from "@hooks/useLogin.js";
 
 const Login = ({ isOpen, close }) => {
-  const loginAPI = LoginAPI();
-
-  const [id, setId] = useState("");
-  const [pw, setPw] = useState("");
-
-  const changeIdHandler = (e) => {
-    setId(e.target.value);
-  };
-
-  const changePwHandler = (e) => {
-    setPw(e.target.value);
-  };
+  const { idChange, pwChange, loginSubmit } = useLogin();
 
   const bubbleCutHandler = (e) => {
     e.stopPropagation();
-  };
-
-  const loginClickHandler = () => {
-    loginAPI
-      .authReq(id, pw)
-      .then((data) => {
-        console.log(data);
-      })
-      .catch((e) => {
-        console.log(e);
-      });
   };
 
   return isOpen ? (
@@ -60,21 +37,17 @@ const Login = ({ isOpen, close }) => {
             <LoginId
               type="text"
               placeholder="아이디"
-              onChange={(e) => changeIdHandler(e)}
+              onChange={(e) => idChange(e)}
             />
             <LoginPw
               type="password"
               placeholder="비밀번호"
-              onChange={(e) => changePwHandler(e)}
+              onChange={(e) => pwChange(e)}
             />
             <LoginMid>
               <FindIdPw>아이디/비밀번호 찾기</FindIdPw>
             </LoginMid>
-            <LoginBtn
-              type="button"
-              onClick={loginClickHandler}
-              value="로그인"
-            />
+            <LoginBtn type="button" onClick={loginSubmit} value="로그인" />
             <SocialBox>
               <Link
                 to={
