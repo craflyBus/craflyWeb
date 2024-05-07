@@ -25,6 +25,12 @@ const Login = ({ isOpen, close }) => {
   const bubbleCutHandler = (e) => {
     e.stopPropagation();
   };
+  const activeEnter = (e) => {
+    if (e.key === "Enter") {
+      loginSubmit();
+      close();
+    }
+  };
 
   return isOpen ? (
     <Modal>
@@ -43,6 +49,7 @@ const Login = ({ isOpen, close }) => {
               type="password"
               placeholder="비밀번호"
               onChange={(e) => pwChange(e)}
+              onKeyDown={(e) => activeEnter(e)}
             />
             <LoginMid>
               <FindIdPw>아이디/비밀번호 찾기</FindIdPw>
