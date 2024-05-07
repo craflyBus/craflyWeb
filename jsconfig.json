@@ -1,4 +1,5 @@
 {
+    "extends": "./jsconfig.paths.json",
     "compilerOptions": {
         "lib": [
             "dom",
@@ -9,19 +10,7 @@
         ],
         "target": "es2017",
         "module": "es6",
-        "allowSyntheticDefaultImports": true,
-        "baseUrl": "./",
-        "paths": {
-            "actions/*": ["src/actions/*"],
-            "public/*": ["public/*"],
-            "components/*": ["src/components/*"],
-            "containers/*": ["src/containers/*"],
-            "constants/*": ["src/constants/*"],
-            "config/*": ["config/*"],
-            "helpers/*": ["src/helpers/*"],
-            "stores/*": ["src/stores/*"],
-            "styles/*": ["src/styles/*"]
-        }
+        "allowSyntheticDefaultImports": true
     },
     "exclude": ["node_modules", "**/node_modules/*"]
 }

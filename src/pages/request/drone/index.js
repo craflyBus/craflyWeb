@@ -1,5 +1,5 @@
-import RequestDrone from "components/request/drone/index.js";
-import Layout from "components/layout/index.js";
+import RequestDrone from "@components/request/drone/index.js";
+import Layout from "@components/layout/index.js";
 import { useEffect } from "react";
 
 const RequestDronePage = () => {

@@ -9,8 +9,8 @@ import {
   PickJump,
 } from "./style.js";
 
-import { ReactComponent as IconImg } from "../../../assets/images/Icon.svg";
-import Tooltip from "components/tooltip/index.js";
+import { ReactComponent as IconImg } from "@assets/images/Icon.svg";
+import Tooltip from "@components/tooltip/index.js";
 
 export const PickContainer = (list, value, handle) => {
   return (

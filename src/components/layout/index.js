@@ -1,7 +1,7 @@
 import Header from "../header/index";
 import Footer from "../footer/index";
 import { Global } from "./style";
-import { ToastProvider } from "components/toast/index";
+import { ToastProvider } from "@components/toast/index";
 
 const Layout = (props) => {
   return (

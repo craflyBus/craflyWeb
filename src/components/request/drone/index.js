@@ -8,7 +8,7 @@ import {
   SectionTitle,
   SectionSubTitle,
 } from "./style.js";
-import PickContainer from "components/pickContainer/button/index.js";
+import PickContainer from "@components/pickContainer/button/index.js";
 
 import types from "./pickList/types.json";
 import materials from "./pickList/materials.json";
@@ -17,9 +17,9 @@ import speeds from "./pickList/speeds.json";
 import powerSources from "./pickList/powerSources.json";
 import batterys from "./pickList/batterys.json";
 import batteryUnits from "./pickList/batteryUnits.json";
-import { PickSliderContainer } from "components/pickContainer/slider/index.js";
-import { ImageContainer } from "components/pickContainer/image/index.js";
-import FunctionContainer from "components/pickContainer/input/index.js";
+import { PickSliderContainer } from "@components/pickContainer/slider/index.js";
+import { ImageContainer } from "@components/pickContainer/image/index.js";
+import FunctionContainer from "@components/pickContainer/input/index.js";
 
 const RequestDrone = () => {
   const [type, setType] = useState(null);

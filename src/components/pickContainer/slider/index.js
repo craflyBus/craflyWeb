@@ -8,9 +8,9 @@ import {
   IconBox,
 } from "./style.js";
 
-import Tooltip from "components/tooltip/index.js";
+import Tooltip from "@components/tooltip/index.js";
 
-import { ReactComponent as IconImg } from "../../../assets/images/Icon.svg";
+import { ReactComponent as IconImg } from "@assets/images/Icon.svg";
 
 export const PickSliderContainer = (
   unit,

@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { Upload, Preview, File, UploadDesc, UploadMsg } from "./style.js";
 
-import { ReactComponent as IconImg } from "../../../assets/images/Icon.svg";
-import { useToast } from "components/toast/index.js";
+import { ReactComponent as IconImg } from "@assets/images/Icon.svg";
+import { useToast } from "@components/toast/index.js";
 
 export const ImageContainer = (list) => {
   const [isActive, setActive] = useState(false);
